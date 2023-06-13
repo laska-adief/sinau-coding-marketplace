@@ -1,0 +1,47 @@
+<app-header></app-header>
+<main class="mx-3 my-3" *ngIf="!isForm">
+  <div class="row">
+    <div class="col-12 col-md-2">
+      <div class="card profil mb-2">
+        <img src="./assets/img/profil.png" alt="profil" class="p-2">
+        <div class="heading py-2">{{ profilData?.profileName }}</div>
+      </div>
+      <div class="card menu mb-2">
+        <div class="heading py-2">Menu</div>
+        <ul class="nav">
+          <li class="py-2" [routerLink]="'barang'" routerLinkActive="active">Barang</li>
+          <li class="py-2" [routerLink]="'supplier'" routerLinkActive="active">Supplier</li>
+        </ul>
+      </div>
+      <div class="card status">
+        <div class="heading py-2">
+          Online
+          <div class="circle-green"></div>
+        </div>
+        <div class="status-detail">
+          <div class="row">
+            <p class="col-6">Hari Online</p>
+            <p class="col-6">: {{profilData?.logindate | date:'YYYY-MM-dd'}}</p>
+          </div>
+
+          <div class="row">
+            <p class="col-6">Waktu Online</p>
+            <p class="col-6">: {{ profilData?.logindate | date:'h:mm:ss' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-10">
+      <div class="card">
+        <div class="heading-left py-2">
+          Dashboard
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="form" *ngIf="isForm">
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

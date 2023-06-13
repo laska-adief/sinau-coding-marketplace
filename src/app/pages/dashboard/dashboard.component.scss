@@ -1,0 +1,56 @@
+@import './../../../assets/scss/color.scss';
+
+main {
+  min-height: calc(100vh - 39px - 46px);
+}
+
+.heading {
+  text-align: center;
+  font-weight: 500;
+  color: $primary-color;
+  background: $secondary-color;
+}
+
+.heading-left {
+  font-weight: 500;
+  color: $primary-color;
+  background: $secondary-color;
+
+  padding-left: 8px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  li {
+    padding-left: 8px;
+    width: 100%;
+    cursor: pointer;
+  }
+}
+
+.active {
+  color: $white;
+  background: $primary-color;
+}
+
+.status .heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.circle-green {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin-top: 4px;
+  background: green;
+}
+
+.status-detail {
+  padding-left: 8px;
+}
