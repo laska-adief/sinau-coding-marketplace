@@ -1,0 +1,42 @@
+<div class="barang">
+  <div class="heading py-2">
+    <span>Barang</span>
+    <button class="btn btn-tambah-barang" [routerLink]="'tambah'" (click)="tambahUpdateBarang()">Tambah Barang</button>
+    <button class="btn btn-success btn-export-barang" (click)="exportBarang()">Export Barang</button>
+  </div>
+  <p-table styleClass="p-datatable-gridlines" [value]="barangData" [lazy]="true" (onLazyLoad)="getAllBarang($event)"
+    [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5, 10,25,50]" [totalRecords]="totalRecords"
+    [loading]="loading" [rowsPerPageOptions]="[10,25,50, 100, {showAll:'All'}]" (onPage)="changePage($event)"
+    id="excel-table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>No</th>
+        <th>Nama Barang</th>
+        <th>Stok</th>
+        <th>Harga</th>
+        <th>Nama Supplier</th>
+        <th>Alamat Supplier</th>
+        <th>No Telp Supplier</th>
+        <th class="text-center">Aksi</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-i="rowIndex">
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{item.namaBarang}}</td>
+        <td>{{item.stok}}</td>
+        <td>{{item.harga}}</td>
+        <td>{{item.supplier.namaSupplier}}</td>
+        <td>{{item.supplier.alamat}}</td>
+        <td>{{item.supplier.noTelp}}</td>
+        <td class="text-center">
+          <button class="btn btn-danger" (click)="hapusBarang(item.id)">Hapus</button>
+          <button class="btn btn-warning" [routerLink]="'update/'+item.id"
+            (click)="tambahUpdateBarang()">Update</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-toast></p-toast>
