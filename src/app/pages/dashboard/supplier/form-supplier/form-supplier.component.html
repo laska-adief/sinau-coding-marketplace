@@ -1,0 +1,37 @@
+<div class="container-box">
+  <div class="card form-container">
+    <div class="heading py-2">
+      {{ isUpdate ? 'Update' : 'Tambah' }} {{' ' + 'Supplier'}}
+    </div>
+    <div class="form-body mt-3 mx-3">
+      <div class="row mb-3">
+        <label for="namasupplier" class="form-label col-sm-3">Nama Supplier</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="namasupplier" placeholder="Masukkan Nama Supplier"
+            [(ngModel)]="namasupplier">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="alamatsupplier" class="form-label col-sm-3">Alamat Supplier</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="alamatsupplier" placeholder="Masukkan Alamat Supplier"
+            [(ngModel)]="alamatsupplier">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="notelpsupplier" class="form-label col-sm-3">No Telp Supplier</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="notelpsupplier" placeholder="Masukkan No Telp Supplier"
+            [(ngModel)]="notelpsupplier">
+        </div>
+      </div>
+
+      <hr>
+      <div class="action-button mb-3">
+        <button class="btn btn-secondary" [routerLink]="'/dashboard/supplier'">Kembali</button>
+        <button class="btn btn-submit float-end" (click)="submit()">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>

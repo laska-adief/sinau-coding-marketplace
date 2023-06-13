@@ -1,0 +1,24 @@
+@import'../../../../../assets/scss/color.scss';
+
+.container-box {
+  min-height: calc(100vh - 39px - 46px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 40%;
+}
+
+.heading {
+  font-weight: 500;
+  color: $primary-color;
+  background: $secondary-color;
+  padding-left: 8px;
+}
+
+.btn-submit {
+  color: $white;
+  background: $primary-color;
+}
