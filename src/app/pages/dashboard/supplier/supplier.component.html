@@ -1,0 +1,36 @@
+<div class="supplier">
+  <div class="heading py-2">
+    <span>Supplier</span>
+    <button class="btn btn-tambah-supplier" [routerLink]="'tambah'" (click)="tambahUpdateSupplier()">Tambah
+      Supplier</button>
+    <button class="btn btn-success btn-export-supplier" (click)="exportSupplier()">Export Supplier</button>
+  </div>
+  <p-table styleClass="p-datatable-gridlines" [value]="supplierData" [lazy]="true" (onLazyLoad)="getAllSupplier($event)"
+    [paginator]="true" [(rows)]="limit" [totalRecords]="totalRecords" [loading]="loading"
+    [rowsPerPageOptions]="[10,25,50, 100, {showAll:'All'}]" (onPage)="changePage($event)" id="excel-table">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>No</th>
+        <th>Nama Supplier</th>
+        <th>Alamat</th>
+        <th>No Telp</th>
+        <th class="text-center">Aksi</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-item let-i="rowIndex">
+      <tr>
+        <td>{{i+1}}</td>
+        <td>{{item.namaSupplier}}</td>
+        <td>{{item.alamat}}</td>
+        <td>{{item.noTelp}}</td>
+        <td class="text-center">
+          <button class="btn btn-danger" (click)="hapusSupplier(item.id)">Hapus</button>
+          <button class="btn btn-warning" [routerLink]="'update/'+item.id"
+            (click)="tambahUpdateSupplier()">Update</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<p-toast></p-toast>
