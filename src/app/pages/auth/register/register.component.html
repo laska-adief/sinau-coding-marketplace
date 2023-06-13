@@ -1,0 +1,38 @@
+<div class="grid">
+  <div class="row row-container">
+    <div class="col-md-5 col-12 col-container">
+      <img src="./assets/img/sinau_coding_t.png" alt="sinau_coding">
+      <h1 class="welcome-text">Selamat Datang</h1>
+      <h2 class="marketplace-text">MARKETPLACE Sinau Coding</h2>
+    </div>
+    <div class="col-md-5 col-12">
+      <div class="register">
+        <div class="register-header py-2">
+          <h2>Register</h2>
+        </div>
+        <div class="register-body mt-3 mx-3">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter Username" [(ngModel)]="username">
+          </div>
+          <div class="mb-3">
+            <label for="profilname" class="form-label">Profil Name</label>
+            <input type="text" class="form-control" id="profilname" placeholder="Enter Profil Name"
+              [(ngModel)]="profilname">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter Password"
+              [(ngModel)]="password">
+          </div>
+          <div class="action-button">
+            <button class="btn mb-2" (click)="register()">Daftar</button>
+            <a [routerLink]="'/login'" class="mb-3">Sudah Punya Akun</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
