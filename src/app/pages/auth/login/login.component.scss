@@ -1,0 +1,68 @@
+@import "./../../../../assets/scss/color.scss";
+
+.row-container {
+  min-height: calc(100vh - 39px);
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 !important;
+}
+
+.col-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2 {
+  color: $primary-color;
+}
+
+.welcome-text {
+  font-weight: bold;
+}
+
+.marketplace-text {
+  font-size: 20px;
+}
+
+.login {
+  border-radius: 4px;
+  box-shadow: 0px 5px 10px 2px #b2b2b2;
+}
+
+.login-header {
+  text-align: center;
+  color: $primary-color;
+  background: $secondary-color;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.action-button {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: fit-content;
+    color: $white;
+    background: $primary-color;
+  }
+
+  a {
+    color: $primary-color;
+  }
+}
+
+@media (max-width:768px) {
+  .row-container {
+    align-items: initial;
+  }
+}
