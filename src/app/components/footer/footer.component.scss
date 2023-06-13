@@ -1,0 +1,26 @@
+@import "./../../../assets/scss/color.scss";
+
+footer {
+  // position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 6px 0;
+  color: $primary-color;
+  background: $secondary-color;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 !important;
+  }
+
+  img {
+    width: 20px;
+  }
+}
