@@ -1,0 +1,44 @@
+<div class="container-box">
+  <div class="card form-container">
+    <div class="heading py-2">
+      {{ isUpdate ? 'Update' : 'Tambah' }} {{' ' + 'Barang'}}
+    </div>
+    <div class="form-body mt-3 mx-3">
+      <div class="row mb-3">
+        <label for="namabarang" class="form-label col-sm-3">Nama Barang</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="namabarang" placeholder="Masukkan Nama Barang"
+            [(ngModel)]="namabarang">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="hargabarang" class="form-label col-sm-3">Harga Barang</label>
+        <div class="col-sm-9">
+          <input type="number" class="form-control" id="hargabarang" placeholder="Masukkan Harga Barang"
+            [(ngModel)]="hargabarang">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="stokbarang" class="form-label col-sm-3">Stok Barang</label>
+        <div class="col-sm-9">
+          <input type="number" class="form-control" id="stokbarang" placeholder="Masukkan Stok Barang"
+            [(ngModel)]="stokbarang">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="supplierbarang" class="form-label col-sm-3">Supplier Barang</label>
+        <div class="col-sm-9">
+          <select class="form-select" aria-label="Supplier" [(ngModel)]="supplierbarang">
+            <option *ngFor="let item of supplierList" [value]="item.id">{{item.namaSupplier}}</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="action-button mb-3">
+        <button class="btn btn-secondary" [routerLink]="'/dashboard/barang'">Kembali</button>
+        <button class="btn btn-submit float-end" (click)="submit()">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p-toast></p-toast>
